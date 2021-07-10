@@ -1,0 +1,10 @@
+version: '3'
+services:
+  redis:
+    build: .
+    container_name: redis31
+    ports: 
+      - "7000:7000"
+      - "7001:7001"
+      - "7002:7002"
+    command: 'sh /vol/a.sh'

@@ -3,7 +3,9 @@ services:
   redis0:
     image: redis
     container_name: redis0
-    network_mode: host
+    ports: 
+      - "192.168.1.1:17000:17000"
+      - "192.168.1.1:7000:7000"
     volumes:
       - ./0/redis.conf:/usr/local/etc/redis/redis.conf
     command: 'redis-server /usr/local/etc/redis/redis.conf'
@@ -11,7 +13,9 @@ services:
   redis1:
     image: redis
     container_name: redis1
-    network_mode: host
+    ports:
+      - "192.168.1.1:17001:17001"
+      - "192.168.1.1:7001:7001"
     volumes:
       - ./1/redis.conf:/usr/local/etc/redis/redis.conf
     command: 'redis-server /usr/local/etc/redis/redis.conf'
@@ -19,7 +23,9 @@ services:
   redis2:
     image: redis
     container_name: redis2
-    network_mode: host
+    ports: 
+      - "192.168.1.1:17002:17002"
+      - "192.168.1.1:7002:7002"
     volumes:
       - ./2/redis.conf:/usr/local/etc/redis/redis.conf
     command: 'redis-server /usr/local/etc/redis/redis.conf'
